@@ -28,7 +28,7 @@ a {
   text-decoration: none;
 }
 
-.content,
+.smooth-content,
 .header__background-image,
 .header__title-wrapper,
 .gallery>* {
@@ -57,6 +57,10 @@ a {
   width: min-content;
   bottom: 12vh;
   line-height: 0.9;
+
+  @media screen and (max-width: 600px) {
+    bottom: 2vh;
+  }
 }
 
 .gallery {
@@ -76,7 +80,7 @@ a {
   margin-top: calc($gallery-gap * 1.75);
 
   @media screen and (max-width: 1192px) {
-    margin-top: calc($gallery-gap*0.5);
+    margin-top: calc($gallery-gap*1.4);
   }
 }
 
