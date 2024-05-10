@@ -7,70 +7,72 @@
 
   <title>Scroll</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <script src="/gsap.min.js" defer></script>
+  <!-- <script src="/gsap.min.js" defer></script>
   <script src="/ScrollTrigger.min.js" defer></script>
-  <script src="/ScrollSmoother.min.js" defer></script>
+  <script src="/ScrollSmoother.min.js" defer></script> -->
 </head>
 
 <body>
-  <div class="smooth-wrapper" id="smooth-wrapper">
-    <div class="smooth-content" id="smooth-content">
-      <header class="header">
-        <img class="header__background-image" data-speed=".6" src="./src/assets/img/hero.png" alt="">
-        <div class="container">
-          <div class="header__title-wrapper" data-speed=".75">
-            <h1 class="header__title">Creative websites</h1>
-          </div>
-        </div>
-      </header>
-
-      <div class="portfolio">
-        <div class="container">
-          <main class="gallery">
-
-            <div class="gallery__left" data-speed=".9">
-              <img class="gallery__item" src="./src/assets/img/1.jpg" alt="Portfolio image">
-              <img class="gallery__item" src="./src/assets/img/2.jpg" alt="Portfolio image">
-              <div class="gallery__item text-block">
-                <h2 class="text-block__title">New Creative Design Trends</h2>
-                <p class="text-block__description">Discover the latest trends in web design that redefine creativity and
-                  innovation. From bold typography to vibrant color
-                  schemes, our designs are at the forefront of modern aesthetics. Embrace the future of digital
-                  expression with our
-                  forward-thinking approach, and stay ahead of the curve in today's competitive online landscape.</p>
-              </div>
-              <img class="gallery__item" src="./src/assets/img/6.jpg" alt="Portfolio image">
-            </div>
-
-            <div class="gallery__right" data-speed="1.1">
-              <div class="gallery__item text-block">
-                <h2 class="text-block__title">Creative floating with amazing parralax effect</h2>
-                <p class="text-block__description">Explore our innovative design approach, where elements seem to float
-                  effortlessly, creating a mesmerizing visual
-                  experience. Our parallax effect adds depth and dimension to your website, captivating visitors and
-                  enhancing user
-                  engagement. Let your content come to life with our creative touch and elevate your online presence to
-                  new heights.</p>
-              </div>
-              <img class="gallery__item" src="./src/assets/img/4.jpg" alt="Portfolio image">
-              <img class="gallery__item" src="./src/assets/img/5.jpg" alt="Portfolio image">
-              <img class="gallery__item" src="./src/assets/img/3.jpg" alt="Portfolio image">
-            </div>
-
-          </main>
-
-          <footer class="footer">
-            Copyright &copy; 2024 Full Development Volodymyr Koshlai, Poland. All rights reserved.
-            <ul class="footer__contact contact">
-              <li class="contact__www"><a href="fulldev.pl" target="_blank">fulldev.pl</a></li>
-              <li class="contact__email"><a href="mailto:info@fulldev.pl">info@fulldev.pl</a></li>
-              <li class="contact__tel"><a href="tel:+48506395584">+48&nbsp;506&nbsp;395&nbsp;584</a></li>
-            </ul>
-          </footer>
-        </div>
+  <div class="scroll-watcher"></div>
+  <!-- <div class="smooth-wrapper" id="smooth-wrapper">
+    <div class="smooth-content" id="smooth-content"> -->
+  <header class="header">
+    <img class="header__background-image" src="./src/assets/img/hero.png" alt="">
+    <div class="container">
+      <div class="header__title-wrapper">
+        <h1 class="header__title">Creative websites</h1>
       </div>
     </div>
+  </header>
+
+  <div class="portfolio">
+    <div class="container">
+      <main class="gallery">
+
+        <div class="gallery__left" data-speed=".9">
+          <img class="gallery__item" src="./src/assets/img/1.jpg" alt="Portfolio image">
+          <img class="gallery__item" src="./src/assets/img/2.jpg" alt="Portfolio image">
+          <div class="gallery__item text-block">
+            <h2 class="text-block__title">New Creative Design Trends</h2>
+            <p class="text-block__description">Discover the latest trends in web design that redefine creativity and
+              innovation. From bold typography to vibrant color
+              schemes, our designs are at the forefront of modern aesthetics. Embrace the future of digital
+              expression with our
+              forward-thinking approach, and stay ahead of the curve in today's competitive online landscape.</p>
+          </div>
+          <img class="gallery__item" src="./src/assets/img/6.jpg" alt="Portfolio image">
+        </div>
+
+        <div class="gallery__right" data-speed="1.1">
+          <div class="gallery__item text-block">
+            <h2 class="text-block__title">Creative floating with amazing parralax effect</h2>
+            <p class="text-block__description">Explore our innovative design approach, where elements seem to float
+              effortlessly, creating a mesmerizing visual
+              experience. Our parallax effect adds depth and dimension to your website, captivating visitors and
+              enhancing user
+              engagement. Let your content come to life with our creative touch and elevate your online presence to
+              new heights.</p>
+          </div>
+          <img class="gallery__item" src="./src/assets/img/4.jpg" alt="Portfolio image">
+          <img class="gallery__item" src="./src/assets/img/5.jpg" alt="Portfolio image">
+          <img class="gallery__item" src="./src/assets/img/3.jpg" alt="Portfolio image">
+        </div>
+
+      </main>
+
+      <footer class="footer">
+        Copyright &copy; 2024 Full Development Volodymyr Koshlai, Poland. All rights reserved.
+        <ul class="footer__contact contact">
+          <li class="contact__www"><a href="fulldev.pl" target="_blank">fulldev.pl</a></li>
+          <li class="contact__email"><a href="mailto:info@fulldev.pl">info@fulldev.pl</a></li>
+          <li class="contact__tel"><a href="tel:+48506395584">+48&nbsp;506&nbsp;395&nbsp;584</a></li>
+        </ul>
+      </footer>
+
+    </div>
   </div>
+  <!-- </div>
+  </div> -->
 
   <script type="module" src="/src/main.ts"></script>
 </body>

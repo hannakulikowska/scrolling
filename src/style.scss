@@ -28,18 +28,11 @@ a {
   text-decoration: none;
 }
 
-.smooth-content,
-.header__background-image,
-.header__title-wrapper,
-.gallery>* {
-  will-change: transform;
-}
-
 .header__background-image {
-  width: calc($index * 36);
+  width: 130vh;
   position: absolute;
   right: 2vw;
-  top: 8vh;
+  top: -4%;
   z-index: -1;
 }
 
@@ -48,24 +41,46 @@ a {
 }
 
 .header__title-wrapper {
-  height: 100dvh;
+  position: relative;
+  height: 120dvh;
 }
 
 .header__title {
   font-size: calc($index * 8);
-  position: absolute;
-  width: min-content;
-  bottom: 12vh;
+  margin: 0;
   line-height: 0.9;
+  position: sticky;
+  top: 30vh;
+  transform: translateY(-100%);
+
+  @media screen and (max-width: 1192px) {
+    top: 40vh;
+  }
+
+  @media screen and (max-width: 768px) {
+    top: 50vh;
+  }
 
   @media screen and (max-width: 600px) {
-    bottom: 2vh;
+    top: 40vh;
   }
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .header__title {
+    animation: fade-in linear forwards;
+  }
+
+  @keyframes fade-in {
+    to {
+      transform: translateY(0);
+    }
+  }
+}
+
+
 .gallery {
   display: flex;
-  padding: calc($index * 8) 0 0;
   gap: 1rem;
 }
 
@@ -86,7 +101,7 @@ a {
 
 .gallery__right .gallery__item {
   margin: 0;
-  margin-top: $gallery-gap;
+  margin-top: calc($gallery-gap * 1);
 
   @media screen and (max-width: 1192px) {
     margin-top: calc($gallery-gap*0.5);
@@ -96,7 +111,7 @@ a {
 .gallery__item {
   min-width: calc($index * 21);
   margin-bottom: $gallery-gap;
-  max-height: 180vh;
+  max-height: 100vh;
   border-radius: 8px;
 }
 
@@ -118,16 +133,28 @@ a {
 }
 
 .footer {
-  padding: 5rem 0.5rem 1rem;
+  padding: 0.5rem 0.5rem 1rem;
   text-align: center;
   color: $color-footer;
   font-size: .9rem;
+
+  @media screen and (max-width: 1192px) {
+    padding: 5rem 0.5rem 1rem;
+  }
+
+  @media screen and (max-width: 459px) {
+    padding: 10rem 0.5rem 1rem;
+  }
 }
 
 .contact {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 459px) {
+    flex-wrap: wrap;
+  }
 }
 
 .contact li {
@@ -142,7 +169,6 @@ a {
 }
 
 @media (hover: hover) {
-
   .contact li:hover a {
     color: #f62727;
   }
@@ -181,14 +207,63 @@ a {
   .header__title {
     font-size: calc($index * 7);
   }
-
-  .contact {
-    padding-left: calc($index*2);
-  }
 }
 
 @media screen and (max-width: 360px) {
   .header__title {
     font-size: calc($index * 6);
+  }
+}
+
+/* CSS Scroll Animation */
+
+.scroll-watcher {
+  height: 10px;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: #f62727;
+  width: 100%;
+  scale: 0 1;
+  transform-origin: left;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll-watcher {
+  to {
+    scale: 1 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .gallery__left .gallery__item {
+    opacity: 0;
+    transform: translateX(-500px);
+    animation: fade-in-left linear forwards;
+    animation-timeline: view();
+    animation-range: 350px 500px;
+  }
+
+  .gallery__right .gallery__item {
+    opacity: 0;
+    transform: translateX(500px);
+    animation: fade-in-right linear forwards;
+    animation-timeline: view();
+    animation-range: 350px 500px;
+  }
+
+  @keyframes fade-in-left {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fade-in-right {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }
